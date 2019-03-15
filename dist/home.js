@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nconsole.log('home111');\n\nvar Log = function Log() {\n  _classCallCheck(this, Log);\n\n  console.log('出错了');\n};\n\nvar log = new Log();\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

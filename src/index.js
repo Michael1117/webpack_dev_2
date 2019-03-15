@@ -1,4 +1,4 @@
-console.log('home');
+console.log('home111');
 
 class Log{
     constructor(){
