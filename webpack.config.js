@@ -1,6 +1,13 @@
 let path = require('path');
 let HtmlWebpackPlugin = require('html-webpack-plugin')
+let CleanWebpackPlugin = require('clean-webpack-plugin')
+let CopyWebpackPlugin = require('copy-webpack-plugin')
+let webpack = require('webpack')
 
+
+// 1) cleanWebpackPlugin
+// 2) copyWebpackPlugin
+// 3) bannerPlugin  内置
 module.exports = {
     // 多入口文件
     mode: 'development',
@@ -46,6 +53,13 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './index.html',
             filename: 'home.html'
-        })
+        }),
+        new CleanWebpackPlugin({
+            cleanAfterEveryBuildPatterns: ['./dist']
+        }),  //把dist  先删除  后打包
+        new CopyWebpackPlugin([
+            {from: './doc', to: './'}  // 拷贝插件
+        ]),
+        new webpack.BannerPlugin('make 2019 by Michael')
     ]
 }

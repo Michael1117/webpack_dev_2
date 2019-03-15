@@ -1,3 +1,4 @@
+/*! make 2019 by Michael */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
