@@ -1,0 +1,25 @@
+{
+  "name": "webpack_dev_2",
+  "version": "1.0.0",
+  "description": "webpack_study",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Michael1117/webpack_dev_2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Michael1117/webpack_dev_2/issues"
+  },
+  "homepage": "https://github.com/Michael1117/webpack_dev_2#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
+  }
+}
