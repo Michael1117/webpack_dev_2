@@ -5,9 +5,32 @@ module.exports = {
     // 多入口文件
     mode: 'development',
     entry: {
-        home: './src/index.js',
-        other: './src/other.js'
+        home: './src/index.js'
     },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                use:{
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            }
+        ]
+    },
+    // 1) devtool: 'source-map' 源码映射   会单独生成一个source map 文件 出错了会标识 当前的列和行 大而全
+    // devtool: 'source-map',  // 增加映射文件  可以帮我们调试 源代码
+
+    // 2) devtool: 'eval-source-map', 不会产生单独的文件  但是可以显示行和列
+    // devtool: 'eval-source-map',
+
+    // 3) 不会产生列 但是是一个单独的映射文件  
+    // devtool: 'cheap-module-source-map', // 产生后你可以保留起来
+
+    // 4) 不会产生文件 集成在打包后的文件中 不会产生列
+    devtool: 'cheap-module-eval-source-map',
     output: {
         // [name] home, other
         filename: '[name].js',
@@ -16,13 +39,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './index.html',
-            filename: 'home.html',
-            chunks: ['home']
-        }),
-        new HtmlWebpackPlugin({
-            template: './index.html',
-            filename: 'other.html',
-            chunks: ['other', 'home']
+            filename: 'home.html'
         })
     ]
 }
